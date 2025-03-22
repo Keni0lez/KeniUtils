@@ -1,5 +1,6 @@
 package org.keni.keniutils.commands;
 
+import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -13,13 +14,30 @@ public class kreload implements CommandExecutor {
         this.plugin = plugin;
     }
 
+    @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
-        if (label.equalsIgnoreCase("kreload")) {
-            this.plugin.getServer().getPluginManager().disablePlugin((Plugin)this.plugin);
-            this.plugin.getServer().getPluginManager().enablePlugin((Plugin)this.plugin);
-            sender.sendMessage("yep");
+        if (!command.getName().equalsIgnoreCase("kreload")) {
+            return false;
+        }
+
+        if (!sender.hasPermission("keniutils.reload")) {
+            sender.sendMessage("§cYou don't have permission!");
             return true;
         }
-        return false;
+
+        sender.sendMessage("§eReloading plugin...");
+
+        String pluginName = plugin.getName();
+        Plugin reloadingPlugin = Bukkit.getPluginManager().getPlugin(pluginName);
+
+        if (reloadingPlugin != null) {
+            Bukkit.getPluginManager().disablePlugin(reloadingPlugin);
+            Bukkit.getPluginManager().enablePlugin(reloadingPlugin);
+            sender.sendMessage("§aPlugin successfully reloaded!");
+        } else {
+            sender.sendMessage("§cPlugin not found!");
+        }
+
+        return true;
     }
 }

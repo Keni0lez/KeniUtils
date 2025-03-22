@@ -16,8 +16,6 @@ class StoryListener implements Listener {
     public void onPlayerJoin(PlayerJoinEvent event) {
         Player player = event.getPlayer();
         Environment currentEnvironment = player.getWorld().getEnvironment();
-
-        // Цвет ника в зависимости от измерения
         switch (currentEnvironment) {
             case NETHER:
                 player.setPlayerListName("§c" + player.getName());
@@ -30,17 +28,10 @@ class StoryListener implements Listener {
                 break;
         }
 
-        // Сообщение о входе
         String customWelcomeMessage = String.format("[§a+§f] §f%s", player.getName());
         Bukkit.getServer().broadcastMessage(customWelcomeMessage);
-
-        // Добавляем эффект слепоты (30 секунд)
-        player.addPotionEffect(new PotionEffect(PotionEffectType.BLINDNESS, 20, 1));
-
-        // Убираем стандартное сообщение
         event.setJoinMessage("");
     }
-
     @EventHandler
     public void onPlayerQuit(PlayerQuitEvent event) {
         String customQuitMessage = String.format("[§c-§f] %s", event.getPlayer().getName());
