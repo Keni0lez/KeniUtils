@@ -14,30 +14,37 @@ import org.bukkit.potion.PotionEffectType;
 class StoryListener implements Listener {
     @EventHandler
     public void onPlayerJoin(PlayerJoinEvent event) {
-        Environment currentEnvironment = event.getPlayer().getWorld().getEnvironment();
-        String playerName = event.getPlayer().getName();
-        if (currentEnvironment == Environment.NETHER) {
-            event.getPlayer().setPlayerListName("§c" + playerName);
-        } else if (currentEnvironment == Environment.THE_END) {
-            event.getPlayer().setPlayerListName("§5" + playerName);
-        } else {
-            event.getPlayer().setPlayerListName("§a" + playerName);
+        Player player = event.getPlayer();
+        Environment currentEnvironment = player.getWorld().getEnvironment();
+
+        // Цвет ника в зависимости от измерения
+        switch (currentEnvironment) {
+            case NETHER:
+                player.setPlayerListName("§c" + player.getName());
+                break;
+            case THE_END:
+                player.setPlayerListName("§5" + player.getName());
+                break;
+            default:
+                player.setPlayerListName("§a" + player.getName());
+                break;
         }
 
-        Player player = event.getPlayer();
-        String customWelcomeMessage = "[§a+§f] §f%player%";
-        customWelcomeMessage = customWelcomeMessage.replace("%player%", event.getPlayer().getName());
+        // Сообщение о входе
+        String customWelcomeMessage = String.format("[§a+§f] §f%s", player.getName());
         Bukkit.getServer().broadcastMessage(customWelcomeMessage);
-        player.addPotionEffect(new PotionEffect(PotionEffectType.BLINDNESS, 200, 1));
-        player.playSound(player.getLocation(), Sound.BLOCK_ENDERCHEST_OPEN, 1.0F, 1.0F);
-        event.setJoinMessage((String)null);
+
+        // Добавляем эффект слепоты (30 секунд)
+        player.addPotionEffect(new PotionEffect(PotionEffectType.BLINDNESS, 20, 1));
+
+        // Убираем стандартное сообщение
+        event.setJoinMessage("");
     }
 
     @EventHandler
     public void onPlayerQuit(PlayerQuitEvent event) {
-        String customQuitMessage = "[§c-§f] %player%";
-        customQuitMessage = customQuitMessage.replace("%player%", event.getPlayer().getName());
+        String customQuitMessage = String.format("[§c-§f] %s", event.getPlayer().getName());
         Bukkit.getServer().broadcastMessage(customQuitMessage);
-        event.setQuitMessage((String)null);
+        event.setQuitMessage("");
     }
 }
