@@ -16,9 +16,6 @@ commands:
     aliases: [pm, tellp]
     permission: "msg.use"
     tab-completer: org.keni.keniutils.commands.msg
-  sit:
-    description: Sit
-    usage: /sit
   dimention:
     description: "Changes your privacy status (private/public)"
     usage: "/dimention <private/public>"
