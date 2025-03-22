@@ -1,0 +1,17 @@
+name: KeniUtils
+version: '1.0'
+main: org.keni.keniutils.KeniUtils
+api-version: '${project.version}'
+commands:
+  info:
+    description: Get info about server
+    usage: /info
+  kreload:
+    description: reload
+    usage: /kreload
+  p:
+    description: mssg
+    usage: /p <player> <message>
+  sit:
+    description: Sit
+    usage: /sit
