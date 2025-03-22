@@ -1,5 +1,5 @@
 # KeniUtils
-### Small and simple Spigot plugin for Vanilla servers.
+### Small and simple Spigot plugin for Vanilla servers. 1.17-1.21.x
 ## Features:
 #### 1. Shows the color of the dimension you are in
 ![](/images/tab.png "Tab")
