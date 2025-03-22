@@ -6,3 +6,6 @@
  
 
 ![](/images/chat.png "chat")
+
+#### 2. New msg chat with sound notification.
+![](/images/msg.png "msg")
