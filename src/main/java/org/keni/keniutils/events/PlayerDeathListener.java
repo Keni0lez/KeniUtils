@@ -16,7 +16,7 @@ public class PlayerDeathListener implements Listener {
 
         if (killer != null) {
             if (isInvisible(killer)) {
-                String newDeathMessage = victim.getName() + " was killed by ???";
+                String newDeathMessage = victim.getName() + " was killed by §k?????";
                 event.setDeathMessage(newDeathMessage);
             }
         }

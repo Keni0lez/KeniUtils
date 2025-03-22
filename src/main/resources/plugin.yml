@@ -19,6 +19,10 @@ commands:
   sit:
     description: Sit
     usage: /sit
+  dimention:
+    description: "Changes your privacy status (private/public)"
+    usage: "/dimention <private/public>"
+    tab-completer: org.keni.keniutils.commands.dimentions
 permissions:
   keniutils.reload:
     description: reloading plugin

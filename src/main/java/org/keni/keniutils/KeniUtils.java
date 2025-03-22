@@ -14,7 +14,9 @@ public final class KeniUtils extends JavaPlugin {
     public void onEnable() {
         getServer().getPluginManager().registerEvents(new PlayerDeathListener(), this);
         getServer().getPluginManager().registerEvents(new StoryListener(), (Plugin)this);
-        getServer().getPluginManager().registerEvents((Listener)new dimentions(), (Plugin)this);
+        dimentions dimentions = new dimentions(this);
+        getServer().getPluginManager().registerEvents(dimentions, this);
+        getCommand("dimention").setExecutor(dimentions);
         getCommand("info").setExecutor((CommandExecutor)new info(this));
         getCommand("kreload").setExecutor(new kreload(this));
         this.getCommand("msg").setExecutor(new msg());
