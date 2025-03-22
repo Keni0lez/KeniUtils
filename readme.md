@@ -15,3 +15,7 @@
 If you are killed by a player with invisibility, the nickname of the killer will be hidden
 
 ![](/images/dead.gif ":3")
+
+#### 4. Log in/out messages changed, why? #justforfun
+
+![](/images/log.png ":P")
