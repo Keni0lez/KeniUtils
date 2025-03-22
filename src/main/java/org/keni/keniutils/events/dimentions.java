@@ -17,7 +17,7 @@ public class    dimentions implements Listener {
         } else if (currentEnvironment == Environment.THE_END) {
             event.getPlayer().setPlayerListName("§5" + playerName);
         } else {
-            event.getPlayer().setPlayerListName("§2" + playerName);
+            event.getPlayer().setPlayerListName("§a" + playerName);
         }
 
     }
@@ -40,7 +40,7 @@ public class    dimentions implements Listener {
         } else if (currentEnvironment == Environment.THE_END) {
             player.setPlayerListName("§5" + playerName);
         } else {
-            player.setPlayerListName("§2" + playerName);
+            player.setPlayerListName("§a" + playerName);
         }
 
     }

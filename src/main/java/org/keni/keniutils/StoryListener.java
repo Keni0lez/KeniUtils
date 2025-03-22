@@ -25,7 +25,7 @@ class StoryListener implements Listener {
         }
 
         Player player = event.getPlayer();
-        String customWelcomeMessage = "§a[+] §f%player%";
+        String customWelcomeMessage = "[§a+§f] §f%player%";
         customWelcomeMessage = customWelcomeMessage.replace("%player%", event.getPlayer().getName());
         Bukkit.getServer().broadcastMessage(customWelcomeMessage);
         player.addPotionEffect(new PotionEffect(PotionEffectType.BLINDNESS, 200, 1));
@@ -35,7 +35,7 @@ class StoryListener implements Listener {
 
     @EventHandler
     public void onPlayerQuit(PlayerQuitEvent event) {
-        String customQuitMessage = "§c[-] §f%player%";
+        String customQuitMessage = "[§c-§f] %player%";
         customQuitMessage = customQuitMessage.replace("%player%", event.getPlayer().getName());
         Bukkit.getServer().broadcastMessage(customQuitMessage);
         event.setQuitMessage((String)null);
