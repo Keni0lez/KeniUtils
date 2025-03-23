@@ -21,3 +21,8 @@ If you are killed by a player with invisibility, the nickname of the killer will
 #### 4. Log in/out messages changed, why? #justforfun
 
 ![](/images/log.png ":P")
+
+#### 5. AFK icon
+if you are idle for 1 minute, an AFK icon appears next to your nickname.
+
+![](/images/afk.png ":P")
