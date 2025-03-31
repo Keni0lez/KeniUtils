@@ -45,15 +45,6 @@ public class tab implements Listener, CommandExecutor, TabCompleter {
     }
 
     @EventHandler
-    public void onPlayerChat(AsyncPlayerChatEvent event) {
-        Player player = event.getPlayer();
-        lastActivity.put(player.getUniqueId(), System.currentTimeMillis());
-        afkPlayers.remove(player.getUniqueId());
-        updatePlayerNameColor(player);
-        event.setFormat(player.getPlayerListName() + "§r: " + event.getMessage());
-    }
-
-    @EventHandler
     public void onPlayerMove(PlayerMoveEvent event) {
         Player player = event.getPlayer();
         if (event.getFrom().distanceSquared(event.getTo()) > 0) {

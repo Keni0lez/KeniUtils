@@ -12,7 +12,7 @@ import org.keni.keniutils.events.PlayerDeathListener;
 public final class KeniUtils extends JavaPlugin {
     public void onEnable() {
         getServer().getPluginManager().registerEvents(new PlayerDeathListener(), this);
-        getServer().getPluginManager().registerEvents(new StoryListener(), (Plugin)this);
+        getServer().getPluginManager().registerEvents(new chat(), (Plugin)this);
         tab dimentions = new tab(this);
         getServer().getPluginManager().registerEvents(dimentions, this);
         getCommand("dimention").setExecutor(dimentions);

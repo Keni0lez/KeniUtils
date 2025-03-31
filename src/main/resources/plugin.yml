@@ -1,5 +1,5 @@
 name: KeniUtils
-version: '1.3'
+version: '1.4.2'
 main: org.keni.keniutils.KeniUtils
 api-version: '${project.version}'
 commands:
@@ -14,7 +14,6 @@ commands:
     description: msg
     usage: /msg <player> <message>
     aliases: [pm, tellp]
-    permission: "msg.use"
     tab-completer: org.keni.keniutils.commands.msg
   dimention:
     description: "Changes your privacy status (private/public)"

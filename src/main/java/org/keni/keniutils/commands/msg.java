@@ -36,8 +36,9 @@ public class msg implements CommandExecutor, TabCompleter, Listener {
 
         String message = String.join(" ", Arrays.copyOfRange(args, 1, args.length));
 
-        player.sendMessage("§b[You ➠ §a" + targetPlayer.getName() + "§b]:§f " + message);
-        targetPlayer.sendMessage("§b[§a" + player.getName() + "§b ➠ You]:§f " + message);
+        player.sendMessage("§7[§x§3§4§B§D§D§1You -> §a" + targetPlayer.getName() + "§x§3§4§B§D§D§1]§f:§f " + message);
+        targetPlayer.sendMessage("§7[§a" + player.getName() + "§x§3§4§B§D§D§1 -> You§7]§f:§f " + message);
+
         targetPlayer.playSound(targetPlayer.getLocation(), Sound.ENTITY_EXPERIENCE_ORB_PICKUP, 1.0F, 1.0F);
 
         return true;
